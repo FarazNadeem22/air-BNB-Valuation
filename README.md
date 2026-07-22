@@ -61,6 +61,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev,ml]"
 python -m str_investment_lab.cli --sample
+str-investment-lab analyze-csv data/sample_properties.csv
 python -m unittest discover -s tests
 ```
 

@@ -1,0 +1,5 @@
+address,city,state,purchase_price,bedrooms,bathrooms,square_feet,annual_property_tax,annual_insurance,hoa_monthly,average_daily_rate,occupancy_rate,cleaning_fee_revenue_monthly,platform_fee_rate,credit_score,down_payment_rate,annual_interest_rate,amortization_years,closing_cost_rate,furnishing_budget
+123 Portfolio Demo Lane,Scottsdale,AZ,725000,4,3,2200,5200,2600,120,315,0.68,900,0.03,740,0.20,0.065,30,0.035,35000
+88 Beach Walk,Destin,FL,865000,5,4,2800,7800,4200,250,410,0.61,1200,0.03,780,0.25,0.0625,30,0.035,45000
+42 Mountain View,Blue Ridge,GA,545000,3,2.5,1850,3600,2400,0,255,0.64,650,0.03,700,0.20,0.069,30,0.035,28000
+

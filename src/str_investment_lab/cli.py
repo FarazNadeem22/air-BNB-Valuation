@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 
+from str_investment_lab.csv_ingestion import analyze_csv
 from str_investment_lab.data_sources.mock import MockPropertyDataSource, MockRevenueDataSource
 from str_investment_lab.models import OperatingAssumption, TaxScenario
 from str_investment_lab.sensitivity import build_sensitivity_matrix
@@ -45,14 +46,22 @@ def sample_analysis() -> dict[str, object]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--sample", action="store_true", help="Run the sample portfolio analysis.")
+    subparsers = parser.add_subparsers(dest="command")
+
+    analyze_csv_parser = subparsers.add_parser(
+        "analyze-csv",
+        help="Run underwriting analysis for each property in a CSV file.",
+    )
+    analyze_csv_parser.add_argument("path", help="Path to a property assumptions CSV file.")
     args = parser.parse_args()
 
     if args.sample:
         print(json.dumps(sample_analysis(), indent=2))
+    elif args.command == "analyze-csv":
+        print(json.dumps(analyze_csv(args.path), indent=2))
     else:
         parser.print_help()
 
 
 if __name__ == "__main__":
     main()
-
